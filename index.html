@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매력 별가루 선택 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>매력 별가루 선택 게임</h1>
+            <div class="stats">
+                <div class="stardust">남은 별가루: <span id="remaining-stardust">30</span>/30</div>
+                <div class="cost-guide">
+                    매력도 비용: 1★(1) | 2★(2) | 3★(3) | 4★(5) | 5★(7) | 6★(10)
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-description">
+                <p>제한된 예산 30 별가루를 활용하여 자신의 다양한 매력 특성을 선택하세요!</p>
+                <p>각 특성에 원하는 만큼 별가루를 투자하고 최종 결과를 확인하세요.</p>
+            </div>
+
+            <div class="charm-selection">
+                <div class="category">
+                    <h2>외모 및 공감 능력</h2>
+                    <div class="charm-grid">
+                        <div class="charm-item" data-id="1">
+                            <h3>단정함</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="2">
+                            <h3>공감 능력</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="3">
+                            <h3>이해심</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="4">
+                            <h3>배려심</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="5">
+                            <h3>밝은 미소</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="6">
+                            <h3>경청하는 태도</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="7">
+                            <h3>상냥함</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="8">
+                            <h3>포옹력</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h2>성실성 및 책임감</h2>
+                    <div class="charm-grid">
+                        <div class="charm-item" data-id="9">
+                            <h3>성실함</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="10">
+                            <h3>책임감</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="11">
+                            <h3>언행일치</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="12">
+                            <h3>계획성</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="13">
+                            <h3>세심함</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h2>지적 호기심 및 개방성</h2>
+                    <div class="charm-grid">
+                        <div class="charm-item" data-id="14">
+                            <h3>호기심</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="15">
+                            <h3>열린 마음</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="16">
+                            <h3>지식욕</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="17">
+                            <h3>창의성</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="charm-item" data-id="18">
+                            <h3>지성</h3>
+                            <div class="charm-level">
+                                <span class="level">매력도: <span class="current-level">0</span></span>
+                                <div class="level-select">
+                                    <button class="level-btn" data-level="0" data-cost="0">0</button>
+                                    <button class="level-btn" data-level="1" data-cost="1">1</button>
+                                    <button class="level-btn" data-level="2" data-cost="2">2</button>
+                                    <button class="level-btn" data-level="3" data-cost="3">3</button>
+                                    <button class="level-btn" data-level="4" data-cost="5">4</button>
+                                    <button class="level-btn" data-level="5" data-cost="7">5</button>
+                                    <button class="level-btn" data-level="6" data-cost="10">6</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 필요에 따라 더 많은 카테고리와 특성 추가 -->
+            </div>
+
+            <div class="actions">
+                <button id="add-more-btn" onclick="toggleMoreCategories()">더 많은 특성 보기</button>
+                <button id="result-btn" onclick="showResult()">결과 보기</button>
+                <button id="reset-btn" onclick="resetGame()">다시 시작</button>
+            </div>
+
+            <div id="result-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>당신의 매력 분석 결과</h2>
+                    <div id="top-charms"></div>
+                    <div id="charm-results"></div>
+                    <div id="final-result"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

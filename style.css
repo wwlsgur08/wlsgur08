@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 2px solid #444;
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: #e0e0ff;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.stardust {
+    padding: 8px 15px;
+    background-color: #2d2d5d;
+    border-radius: 20px;
+    border: 1px solid #5050a0;
+}
+
+.cost-guide {
+    color: #c0c0ff;
+    font-size: 0.9rem;
+    background-color: rgba(80, 80, 160, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.game-description {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: rgba(80, 80, 160, 0.2);
+    border-radius: 10px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #a0a0ff;
+    background-color: rgba(80, 80, 160, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.charm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.charm-item {
+    background-color: #252540;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.charm-item:hover {
+    transform: translateY(-5px);
+}
+
+.charm-item h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #c0c0ff;
+}
+
+.charm-level {
+    text-align: center;
+}
+
+.level {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.level-select {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.level-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #4040a0;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.level-btn:hover {
+    background-color: #5050b0;
+    transform: scale(1.1);
+}
+
+.level-btn.active {
+    background-color: #70a0ff;
+    box-shadow: 0 0 10px rgba(112, 160, 255, 0.8);
+}
+
+.level-btn.disabled {
+    background-color: #333;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.actions button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #4040a0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#result-btn {
+    background-color: #5050b0;
+}
+
+#reset-btn {
+    background-color: #505050;
+}
+
+#add-more-btn {
+    background-color: #4d4d70;
+}
+
+.actions button:hover {
+    background-color: #6060c0;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #252540;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    animation: modalopen 0.4s;
+}
+
+@keyframes modalopen {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: white;
+}
+
+#top-charms {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(80, 80, 160, 0.3);
+    border-radius: 8px;
+}
+
+#charm-results {
+    margin: 20px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.result-category {
+    margin-bottom: 20px;
+}
+
+.result-category h3 {
+    margin-bottom: 10px;
+    color: #c0c0ff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.charm-result-item {
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.charm-name {
+    font-weight: bold;
+}
+
+#final-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(80, 80, 160, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .charm-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+    
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .actions button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
